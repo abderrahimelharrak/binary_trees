@@ -70,4 +70,6 @@ void p_push(binary_tree_t *, levelorder *,
                 levelorder **, void (*func)(int));
 void pops(levelorder **);
 binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
+int binary_tree_is_bst(const binary_tree_t *tree);
+int is_bst_helper(const binary_tree_t *tree, int lo, int hi);
 #endif
