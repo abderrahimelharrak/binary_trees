@@ -52,9 +52,9 @@ binary_tree_t *binary_tree_sibling(binary_tree_t *node);
 binary_tree_t *binary_tree_uncle(binary_tree_t *node);
 binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second);
 void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
-levelorder_queue_t *create_node(binary_tree_t *node);
-void free__queue(levelorder_queue_t *head);
-void pint__push(binary_tree_t *node, levelorder_queue_t *head,
-                levelorder_queue_t **tail, void (*func)(int));
-void pops(levelorder_queue_t **head);
+levelorder *cr_node(binary_tree_t *);
+void free__q(levelorder *);
+void p__push(binary_tree_t *, levelorder *,
+                levelorder **, void (*func)(int));
+void pops(levelorder **);
 #endif
