@@ -6,7 +6,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-/* Data structures */
 
 /**
  * struct binary_tree_s - Binary tree node
@@ -57,4 +56,14 @@ void free__q(levelorder *);
 void p__push(binary_tree_t *, levelorder *,
                 levelorder **, void (*func)(int));
 void pops(levelorder **);
+/**
+ * struct levelorder - Level order traversal queue.
+ * @node: A node of a binary tree.
+ * @next: The next node to traverse to in the binary tree.
+ */
+typedef struct levelorder
+{
+        binary_tree_t *node;
+        struct levelorder_queue_s *next;
+} levelorder;
 #endif
