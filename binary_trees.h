@@ -64,6 +64,7 @@ void pops(levelorder **);
 typedef struct levelorder
 {
         binary_tree_t *node;
-        struct levelorder_queue_s *next;
+        struct levelorder *next;
 } levelorder;
+binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
 #endif

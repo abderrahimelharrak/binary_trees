@@ -1,5 +1,4 @@
 #include "binary_trees.h"
-#include "struct.h"
 
 /**
  * pops - Pops the head of a levelorder_queue_t queue.
