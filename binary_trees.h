@@ -6,7 +6,10 @@
 #include <stdlib.h>
 #include <string.h>
 
-
+typedef struct binary_tree_s binary_tree_t;
+typedef struct binary_tree_s bst_t;
+typedef struct binary_tree_s avl_t;
+typedef struct binary_tree_s heap_t;
 /**
  * struct binary_tree_s - Binary tree node
  * @n: Integer stored in the node
@@ -21,6 +24,16 @@ struct binary_tree_s
 	struct binary_tree_s *left;
 	struct binary_tree_s *right;
 };
+/**
+ * struct levelorder - Level order traversal queue.
+ * @node: A node of a binary tree.
+ * @next: The next node to traverse to in the binary tree.
+ */
+typedef struct levelorder
+{
+        binary_tree_t *node;
+        struct levelorder *next;
+} levelorder;
 typedef struct binary_tree_s binary_tree_t;
 typedef struct binary_tree_s bst_t;
 typedef struct binary_tree_s avl_t;
@@ -52,19 +65,9 @@ binary_tree_t *binary_tree_uncle(binary_tree_t *node);
 binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second);
 void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
 levelorder *cr_node(binary_tree_t *);
-void free__q(levelorder *);
-void p__push(binary_tree_t *, levelorder *,
+void free_q(levelorder *);
+void p_push(binary_tree_t *, levelorder *,
                 levelorder **, void (*func)(int));
 void pops(levelorder **);
-/**
- * struct levelorder - Level order traversal queue.
- * @node: A node of a binary tree.
- * @next: The next node to traverse to in the binary tree.
- */
-typedef struct levelorder
-{
-        binary_tree_t *node;
-        struct levelorder *next;
-} levelorder;
 binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
 #endif
